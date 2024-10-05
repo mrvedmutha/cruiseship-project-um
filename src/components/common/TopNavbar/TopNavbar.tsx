@@ -1,6 +1,14 @@
 "use client";
 import Link from "next/link";
-import { CircleUser, Menu, Package2, Search, Sun, Moon } from "lucide-react";
+import {
+  ScanFace,
+  CircleUser,
+  Menu,
+  Package2,
+  Search,
+  Sun,
+  Moon,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -125,10 +133,9 @@ export default function TopNavbar({
               </DropdownMenu>
             )}
             {!isAccountRequired && (
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
+              <Link href="/login" className="rounded-full">
+                <ScanFace className="h-5 w-5" />
+              </Link>
             )}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
